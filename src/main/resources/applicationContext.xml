@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <context:property-placeholder location="sport.properties" />
+    
+    <bean id="myLoggerConfig" 
+          class="testgroup.annotationsspringdemo.config.MyLoggerConfig" 
+          init-method="initLogger">
+        <property name="rootLoggerLevel" value="FINE" />
+        <property name="printedLoggerLevel" value="FINE" />
+    </bean>
+    
+    <bean id="myFortuneService" 
+          class="testgroup.annotationsspringdemo.service.RandomFortuneService">
+    </bean>
+    
+    <bean id="myCoach"
+          class="testgroup.annotationsspringdemo.model.coach.BaseballCoach">
+        <constructor-arg ref="myFortuneService" />
+    </bean>
+
+</beans>
