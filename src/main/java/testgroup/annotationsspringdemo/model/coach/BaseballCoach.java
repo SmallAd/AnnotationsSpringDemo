@@ -1,27 +1,13 @@
 package testgroup.annotationsspringdemo.model.coach;
 
-import testgroup.annotationsspringdemo.service.FortuneService;
+import org.springframework.stereotype.Component;
 
-
-/**
- *
- * @author smallad
- */
+@Component("thatSillyCoach")
 public class BaseballCoach implements Coach {
-    
-    private FortuneService fortuneService;
 
-    public BaseballCoach(FortuneService fortuneService) {
-        this.fortuneService = fortuneService;
-    }
-    
     @Override
-    public String getDailyWorkout(){
+    public String getDailyWorkout() {
         return "Spend 30 minutes on batting practice";
     }
 
-    @Override
-    public String getDailyFortune() {
-        return fortuneService.getFortune();
-    }
 }

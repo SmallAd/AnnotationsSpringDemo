@@ -7,22 +7,13 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <context:property-placeholder location="sport.properties" />
-    
     <bean id="myLoggerConfig" 
           class="testgroup.annotationsspringdemo.config.MyLoggerConfig" 
           init-method="initLogger">
         <property name="rootLoggerLevel" value="FINE" />
         <property name="printedLoggerLevel" value="FINE" />
     </bean>
-    
-    <bean id="myFortuneService" 
-          class="testgroup.annotationsspringdemo.service.RandomFortuneService">
-    </bean>
-    
-    <bean id="myCoach"
-          class="testgroup.annotationsspringdemo.model.coach.BaseballCoach">
-        <constructor-arg ref="myFortuneService" />
-    </bean>
+
+    <context:component-scan base-package="testgroup.annotationsspringdemo" />    
 
 </beans>
