@@ -4,20 +4,24 @@ import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
-import lombok.Setter;
+import javax.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author smallad
  */
+@Component
 public class MyLoggerConfig {
     
-    @Setter
+    @Value("${rootLoggerLevel}")
     private String rootLoggerLevel;
-    @Setter
+    @Value("${printedLoggerLevel}")
     private String printedLoggerLevel;
     
+    @PostConstruct
     public void initLogger(){
         Level rootLevel = Level.parse(rootLoggerLevel);
         Level printedLevel = Level.parse(printedLoggerLevel);

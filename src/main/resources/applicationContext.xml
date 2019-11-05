@@ -7,13 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <bean id="myLoggerConfig" 
-          class="testgroup.annotationsspringdemo.config.MyLoggerConfig" 
-          init-method="initLogger">
-        <property name="rootLoggerLevel" value="FINE" />
-        <property name="printedLoggerLevel" value="FINE" />
-    </bean>
-
-    <context:component-scan base-package="testgroup.annotationsspringdemo" />    
+    <context:component-scan base-package="testgroup.annotationsspringdemo" /> 
+    
+    <context:property-placeholder location="log.properties"/>   
 
 </beans>
