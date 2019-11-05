@@ -1,7 +1,9 @@
 package testgroup.annotationsspringdemo.service;
 
 import java.util.Random;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RandomFortuneService implements FortuneService {
 
     private static final String[] FORTUNES = new String[]{
@@ -10,16 +12,12 @@ public class RandomFortuneService implements FortuneService {
         "The journey is the reward"
     };
 
-//    static {
-//        FORTUNES.add("Beware of the wolf in sheep's clothing");
-//        FORTUNES.add("Diligence is the mother of good luck");
-//        FORTUNES.add("The journey is the reward");
-//    }
+    private Random rand = new Random();
 
     @Override
     public String getFortune() {
-        Random rand = new Random();
-        return FORTUNES[rand.nextInt(FORTUNES.length)];
+        int index = rand.nextInt(FORTUNES.length);
+        return FORTUNES[index];
     }
 
 }

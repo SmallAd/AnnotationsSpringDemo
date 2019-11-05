@@ -1,6 +1,7 @@
 package testgroup.annotationsspringdemo.model.coach;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import testgroup.annotationsspringdemo.service.FortuneService;
 
@@ -10,7 +11,7 @@ public class BaseballCoach implements Coach {
     private FortuneService fortuneService;
 
     @Autowired
-    public BaseballCoach(FortuneService fortuneService) {
+    public BaseballCoach(@Qualifier("happyFortuneService") FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
