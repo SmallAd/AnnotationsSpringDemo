@@ -2,7 +2,7 @@ package testgroup.annotationsspringdemo.model.coach;
 
 import org.springframework.stereotype.Component;
 
-@Component("thatSillyCoach")
+@Component
 public class BaseballCoach implements Coach {
 
     @Override

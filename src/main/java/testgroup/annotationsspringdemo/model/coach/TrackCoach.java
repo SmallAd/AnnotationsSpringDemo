@@ -1,9 +1,8 @@
 package testgroup.annotationsspringdemo.model.coach;
 
-/**
- *
- * @author smallad
- */
+import org.springframework.stereotype.Component;
+
+@Component
 public class TrackCoach implements Coach {
 
     @Override
