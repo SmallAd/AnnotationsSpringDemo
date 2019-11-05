@@ -7,5 +7,7 @@ package testgroup.annotationsspringdemo.model.coach;
 public interface Coach {
 
     String getDailyWorkout();
+
+    String getDailyFortune();
         
 }

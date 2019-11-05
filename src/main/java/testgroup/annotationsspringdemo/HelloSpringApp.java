@@ -15,6 +15,7 @@ public class HelloSpringApp {
 
         Coach coach = context.getBean("baseballCoach", Coach.class);
         System.out.println(coach.getDailyWorkout());
+        System.out.println(coach.getDailyFortune());
 
         context.close();
 

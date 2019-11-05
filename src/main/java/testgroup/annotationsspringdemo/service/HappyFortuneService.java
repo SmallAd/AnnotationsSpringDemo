@@ -1,11 +1,13 @@
 package testgroup.annotationsspringdemo.service;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author smallad
  */
 
-
+@Component
 public class HappyFortuneService implements FortuneService{
 
     @Override
