@@ -11,7 +11,7 @@ public class TrackCoach implements Coach {
     private FortuneService fortuneService;
 
     @Autowired
-    @Qualifier("happyFortuneService")
+    @Qualifier("fileFortuneService")
     public void setFortuneService(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
