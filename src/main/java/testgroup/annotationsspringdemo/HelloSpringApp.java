@@ -13,7 +13,7 @@ public class HelloSpringApp {
         ClassPathXmlApplicationContext context
                 = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Coach coach = context.getBean("baseballCoach", Coach.class);
+        Coach coach = context.getBean("trackCoach", Coach.class);
         System.out.println(coach.getDailyWorkout());
         System.out.println(coach.getDailyFortune());
 
