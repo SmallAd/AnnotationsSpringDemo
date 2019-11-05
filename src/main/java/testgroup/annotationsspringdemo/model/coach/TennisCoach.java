@@ -5,18 +5,18 @@ import org.springframework.stereotype.Component;
 import testgroup.annotationsspringdemo.service.FortuneService;
 
 @Component
-public class TrackCoach implements Coach {
-    
+public class TennisCoach implements Coach {
+
     private FortuneService fortuneService;
 
     @Autowired
-    public void setFortuneService(FortuneService fortuneService) {
+    public void doSomeCrazyStuff(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
     @Override
     public String getDailyWorkout() {
-        return "Run a hard 5k";
+        return "Practice your backhand volley";
     }
 
     @Override
