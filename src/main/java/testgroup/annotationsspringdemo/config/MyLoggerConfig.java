@@ -7,13 +7,15 @@ import java.util.logging.SimpleFormatter;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  *
  * @author smallad
  */
-@Component
+@Configuration
+@PropertySource("log.properties")
 public class MyLoggerConfig {
     
     @Value("${rootLoggerLevel}")
