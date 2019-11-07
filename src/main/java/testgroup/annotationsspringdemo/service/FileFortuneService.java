@@ -1,16 +1,18 @@
 package testgroup.annotationsspringdemo.service;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import javax.annotation.PostConstruct;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Component;
 
 @Component
 public class FileFortuneService implements FortuneService {
@@ -33,6 +35,11 @@ public class FileFortuneService implements FortuneService {
             fortunes.clear();
             fortunes.add("Have a nice day!");
         }
+    }
+
+    @PreDestroy
+    private void destroyLogger() {
+        System.out.println("Inside destroy method");
     }
 
     @Override
